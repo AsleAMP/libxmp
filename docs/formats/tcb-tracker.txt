@@ -22,11 +22,13 @@ Offset	Size	Description			Example
 00000	8	magic ID			"AN COOL."
 00008	2	unknown				0x0000
 0000a	2	number of stored patterns [p]	0x0014
-0000c	2	unknown				0xc000
+0000c	1	set speed (0x10 - this value)	0x0c
+0000d   1       unknown                         0x00
 0000e	128	pattern sequence
 0008e	1	song length			0x41
 0008f	1	unknown				0x00
-00090	2	unknown				0x0000
+00090	1	restart position                0x00
+00091   1       unknown                         0x00
 00092	Repeat 16:
 	8	instrument names
 00112	32	unknown
@@ -36,8 +38,7 @@ Offset	Size	Description			Example
 +4	Repeat 16:
 	1	volume for each instrument	0x7f
 	1	unknown (tran?)			0x00
-	1	unknown	(sped/spes?)		0x00
-	1	unknown	(sped/spes?)		0x00
+	2	replen                          0x1d00
 +64	4	unknown				0x000000d4
 +4	Repeat 16:
 	4	size of each sample		0x0000182a
